@@ -74,7 +74,9 @@ class DataMahasiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mahasiswa = DB::table('tabel_mahasiswa')->where('id', $id)->get();
+
+        return view('edit', compact('mahasiswa'));
     }
 
     /**
@@ -86,7 +88,17 @@ class DataMahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('tabel_mahasiswa')->where('id', $id)->update([
+            'Nama' => $request->Nama,
+            'Jurusan' => $request->Jurusan,
+            'Kelas' => $request->Kelas,
+            'Angkatan' => $request->Angkatan,
+            'Email' => $request->Email,
+            'NoHP' => $request->NoHP,
+            'Alamat' => $request->Alamat
+        ]);
+
+        return redirect('/');
     }
 
     /**
@@ -97,6 +109,8 @@ class DataMahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('tabel_mahasiswa')->where('id', $id)->delete();
+
+        return redirect('/');
     }
 }

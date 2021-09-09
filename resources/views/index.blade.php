@@ -39,8 +39,8 @@
                 <td class="text-center">
                     <form action="#" method="POST">
                         <a class="btn btn-info btn-sm" href="/show/{{ $item->id }}">Show</a>
-                        <a class="btn btn-primary btn-sm" href="#">Edit</a>
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                        <a class="btn btn-primary btn-sm" href="/edit/{{ $item->id }}">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="/delete/{{ $item->id }}"  onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</a>
                     </form>
                 </td>
             </tr>

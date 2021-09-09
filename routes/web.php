@@ -25,3 +25,6 @@ Route::get('/', 'DataMahasiswaController@index')->name('home');
 Route::get('/create', 'DataMahasiswaController@create');
 Route::post('/store', 'DataMahasiswaController@store');
 Route::get('/show/{id}', 'DataMahasiswaController@show');
+Route::get('/delete/{id}', 'DataMahasiswaController@destroy');
+Route::get('/edit/{id}', 'DataMahasiswaController@edit');
+Route::post('/update/{id}', 'DataMahasiswaController@update');
